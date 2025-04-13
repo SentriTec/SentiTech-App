@@ -1,0 +1,11 @@
+plate = st.text_input("Enter Plate")
+location = st.text_input("Enter Location")
+speed = st.number_input("Enter Speed", min_value=0)
+
+if st.button("Save to Firebase"):
+    ref.push({
+        "plate": plate,
+        "location": location,
+        "speed": speed
+    })
+    st.success("Vehicle data saved!")

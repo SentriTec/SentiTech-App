@@ -6,7 +6,7 @@ from firebase_admin import credentials, db
 if not firebase_admin._apps:
     cred = credentials.Certificate("firebase-key.json")  # Replace with your key file
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://YOUR_PROJECT.firebaseio.com/'  # Replace with your actual DB URL
+        'databaseURL': 'https://console.firebase.google.com/project/sentritech-e0c5c/settings/general/web:Nzg3MTJiY2QtYzMxNi00ODIyLWFiZDMtZjhhZGJiNGIzZmM3/'  # Replace with your actual DB URL
     })
 
 st.title("🔒 SentriDrive - Vehicle Monitor")

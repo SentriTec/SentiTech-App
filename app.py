@@ -1,18 +1,3 @@
-import firebase_admin
-from firebase_admin import credentials, db
-
-cred = credentials.Certificate("firebase-key.json")  # Path to your key
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://YOUR_PROJECT_ID.firebaseio.com/'  # Replace with your actual DB URL
-})
-
-
-    # Table
-    st.subheader("Device Logs")
-    st.dataframe(df[['device_id', 'timestamp', 'lat', 'lon']].sort_values("timestamp", ascending=False))
-
-else:
-    st.warning("No data available yet from SentriTrack devices.")
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, db
@@ -21,7 +6,7 @@ from firebase_admin import credentials, db
 if not firebase_admin._apps:
     cred = credentials.Certificate("firebase-key.json")  # Replace with your key file
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://YOUR_PROJECT.firebaseio.com/'  # Replace with your URL
+        'databaseURL': 'https://YOUR_PROJECT.firebaseio.com/'  # Replace with your actual DB URL
     })
 
 st.title("🔒 SentriDrive - Vehicle Monitor")
@@ -57,3 +42,4 @@ if vehicles:
         st.write(f"🚘 **{data['plate']}** | 📍 {data['location']} | 🚀 {data['speed']} km/h")
 else:
     st.info("No vehicle data found yet.")
+

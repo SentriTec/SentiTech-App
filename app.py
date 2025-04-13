@@ -43,5 +43,3 @@ if vehicles:
 else:
     st.info("No vehicle data found yet.")
 
-
-

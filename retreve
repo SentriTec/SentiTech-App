@@ -1,0 +1,9 @@
+# Read data
+vehicles = ref.get()
+
+if vehicles:
+    st.write("📦 Vehicle Data:")
+    for key, val in vehicles.items():
+        st.json(val)
+else:
+    st.info("No vehicle data found.")

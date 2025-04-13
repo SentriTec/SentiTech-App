@@ -1,0 +1,14 @@
+import streamlit as st
+from firebase_admin import db
+
+# Create a reference to a path in your database
+ref = db.reference("sentridrive/vehicles")
+
+# Push data
+if st.button("Send Test Data"):
+    ref.push({
+        "plate": "CA123456",
+        "location": "Cape Town",
+        "speed": 80
+    })
+    st.success("Test data sent to Firebase!")

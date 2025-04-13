@@ -42,5 +42,5 @@ if vehicles:
         st.write(f"🚘 **{data['plate']}** | 📍 {data['location']} | 🚀 {data['speed']} km/h")
 else:
     st.info("No vehicle data found yet.")
-    Fill out the form (plate, location, speed) and click Send to Firebase
+    
 

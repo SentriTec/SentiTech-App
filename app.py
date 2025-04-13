@@ -1,8 +1,4 @@
-from pathlib import Path
-import zipfile
 
-# Define the corrected app.py content
-corrected_app_py = """
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, db
@@ -47,19 +43,3 @@ if vehicles:
         st.write(f"🚗 {value['plate']} | 📍 {value['location']} | 💨 {value['speed']} km/h | 🕒 {value['timestamp']}")
 else:
     st.write("No data available.")
-"""
-
-# Save to a file
-app_path = Path("/mnt/data/sentritech_app_fixed/app.py")
-app_path.parent.mkdir(parents=True, exist_ok=True)
-app_path.write_text(corrected_app_py)
-
-# Zip it
-zip_path = "/mnt/data/sentritech_app_fixed.zip"
-with zipfile.ZipFile(zip_path, "w") as zipf:
-    zipf.write(app_path, arcname="app.py")
-
-zip_path
-
-    
-
